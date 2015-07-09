@@ -17,24 +17,13 @@ function randomPlay() {
         return "scissors";
     }
 }
-////////////////////////////////////////////////
-/*           Write Your Code Below            */
-////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-    if (move === null || move == '') {
-        return getInput();
-    } else {
-        return move;
-    }
+    (move === null || move === '') ? getInput() : move;
 }
 
 function getComputerMove(move) {
-    if (move === null || move == '') {
-        return randomPlay();
-    } else {
-        return move;
-    }
+    (move === null || move === '') ? randomPlay() : move;
 }
 
 function getWinner(playerMove,computerMove) {

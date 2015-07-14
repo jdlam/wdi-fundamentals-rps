@@ -19,11 +19,16 @@ function randomPlay() {
 }
 
 function getPlayerMove(move) {
-    (move === null || move === '') ? getInput() : move;
+    (move === null || move === '' || move !== 'paper' || move !== 'rock' || move !== 'scissors') ? getInput() : move;
 }
 
 function getComputerMove(move) {
-    (move === null || move === '') ? randomPlay() : move;
+    if (move === null || move === '') {
+        move = randomPlay();
+    } else if (move !== 'paper' || move !== 'rock' || move !== 'scissors') {
+        move = getInput();
+    }
+    return move;
 }
 
 function getWinner(playerMove,computerMove) {
